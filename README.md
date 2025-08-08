@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engram Industries | Pioneering Memory Reconstruction Technology</title>
+    <title>Engram Industries! | Pioneering Memory Reconstruction Technology</title>
     <meta name="description" content="Engram Industries specializes in advanced memory reconstruction technology, mnemonic enhancement, and temporal cognition research.">
     
     <st    width: 30px;
