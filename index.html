@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engram Industries - Pioneering memory reconstruction technology through advanced mnemonic systems and temporal cognition research.">
     <title>Engram Industries | Pioneering Memory Reconstruction Technology</title>
-    <meta name="description" content="Engram Industries specializes in advanced memory reconstruction technology, mnemonic enhancement, and temporal cognition research.">
     
     <style>
+        /* CSS Reset - CRITICAL for GitHub Pages */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        ul, ol, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Variables */
         :root {
             --primary-color: #0066CC;
             --text-dark: #333;
@@ -22,20 +42,23 @@
             --warning-color: #ff6600;
         }
         
+        /* Base Styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: white;
+            min-height: 100vh;
         }
         
-        /* Header */
+        /* Header - Fixed for GitHub Pages */
         header {
             background: white;
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            width: 100%;
         }
         
         nav {
@@ -53,6 +76,8 @@
             font-weight: 300;
             letter-spacing: 3px;
             color: var(--text-dark);
+            display: flex;
+            align-items: center;
         }
         
         .logo-symbol {
@@ -63,7 +88,6 @@
             background: linear-gradient(135deg, #0066CC, #004499);
             border-radius: 50%;
             position: relative;
-            vertical-align: middle;
         }
         
         .logo-symbol::after {
@@ -78,10 +102,23 @@
             border-radius: 50%;
         }
         
+        /* Navigation - Fixed alignment issue */
         .nav-links {
             display: flex;
             gap: 40px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
             list-style: none;
+        }
+        
+        .nav-links li {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
         
         .nav-links a {
@@ -90,6 +127,9 @@
             font-size: 14px;
             letter-spacing: 0.5px;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
         }
         
         .nav-links a:hover {
@@ -114,6 +154,9 @@
             font-size: 20px;
             color: var(--text-light);
             margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero-stats {
@@ -121,10 +164,12 @@
             justify-content: center;
             gap: 60px;
             margin-top: 60px;
+            flex-wrap: wrap;
         }
         
         .stat {
             text-align: center;
+            min-width: 150px;
         }
         
         .stat-number {
@@ -163,9 +208,10 @@
             font-size: 18px;
             color: var(--text-light);
             margin-bottom: 40px;
+            line-height: 1.8;
         }
         
-        /* Products Section */
+        /* Products Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -177,11 +223,12 @@
             background: var(--bg-light);
             padding: 40px;
             border-radius: 8px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .product-status {
@@ -217,9 +264,16 @@
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s;
         }
         
-        /* Research Section */
+        .product-link:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Research Papers */
         .research-papers {
             display: grid;
             gap: 30px;
@@ -230,6 +284,11 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background: white;
+            transition: border-color 0.3s;
+        }
+        
+        .paper:hover {
+            border-color: var(--primary-color);
         }
         
         .paper-title {
@@ -271,7 +330,7 @@
             background: #6c757d;
         }
         
-        /* Team Section */
+        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -314,7 +373,7 @@
             color: #999;
         }
         
-        /* Careers Section */
+        /* Careers */
         .careers-list {
             display: grid;
             gap: 20px;
@@ -327,11 +386,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            cursor: pointer;
         }
         
         .job-posting:hover {
             border-color: var(--primary-color);
+            background: var(--bg-light);
         }
         
         .job-title {
@@ -351,6 +412,18 @@
             border-radius: 20px;
             font-size: 12px;
             color: var(--text-light);
+        }
+        
+        /* Disclaimer */
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #856404;
+            line-height: 1.8;
         }
         
         /* Footer */
@@ -385,6 +458,8 @@
         
         .footer-section ul {
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .footer-section li {
@@ -406,27 +481,16 @@
             margin: 40px auto 0;
             padding-top: 40px;
             border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
         }
         
         .footer-bottom p {
             font-size: 12px;
             color: #999;
+            margin-bottom: 10px;
         }
         
-        .disclaimer {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 12px;
-            color: #856404;
-        }
-        
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -444,6 +508,12 @@
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .job-posting {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
             }
         }
     </style>
@@ -654,7 +724,9 @@
             <strong>Important Notice:</strong> Engram Industries' memory reconstruction technology is pending FDA approval for therapeutic use. 
             Current applications are limited to entertainment and research purposes. Side effects may include temporal displacement, 
             enhanced nostalgia, difficulty distinguishing reconstructed from organic memories, and mild dissociation. Users experiencing 
-            memory loops lasting more than 4 hours should discontinue use and consult a mnemonic specialist.
+            memory loops lasting more than 4 hours should discontinue use and consult a mnemonic specialist. Reconstruction accuracy 
+            varies by individual and source material quality. Engram Industries is not responsible for false memories generated during 
+            the reconstruction process.
         </div>
     </div>
 
@@ -669,7 +741,8 @@
                 <p style="margin-top: 20px;">
                     <strong>Headquarters:</strong><br>
                     580 California Street<br>
-                    San Francisco, CA 94104
+                    San Francisco, CA 94104<br>
+                    contact@engramindustries.com
                 </p>
             </div>
             
