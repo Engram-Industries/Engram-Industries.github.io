@@ -5,7 +5,55 @@
     <title>Engram Industries | Pioneering Memory Reconstruction Technology</title>
     <meta name="description" content="Engram Industries specializes in advanced memory reconstruction technology, mnemonic enhancement, and temporal cognition research.">
     
-    <style>
+    <st    width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #0066CC, #004499);
+            border-radius: 50%;
+            position: relative;
+            vertical-align: middle;
+        }
+        
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center; 
+            margin: 0;           
+            padding: 0;           
+            height: 100%;         
+        }
+
+        .nav-links li {         /* Add this entire rule */
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+}
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            display: flex;        /* Add this */
+            align-items: center;  /* Add this */
+            height: 100%;         /* Add this */
+        }
         * {
             margin: 0;
             padding: 0;
@@ -56,40 +104,7 @@
         
         .logo-symbol {
             display: inline-block;
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-            background: linear-gradient(135deg, #0066CC, #004499);
-            border-radius: 50%;
-            position: relative;
-            vertical-align: middle;
-        }
         
-        .logo-symbol::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 15px;
-            height: 15px;
-            background: white;
-            border-radius: 50%;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-        }
         
         .nav-links a:hover {
             color: var(--primary-color);
